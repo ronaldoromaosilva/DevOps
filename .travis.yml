@@ -1,0 +1,23 @@
+# Linguagem
+language: python
+
+# Versão
+python:
+  - '3.7.9'
+
+# Instalação do flask
+install:
+  - pip install flask
+
+# script de teste
+script:
+  - python -m unittest -v test
+
+# Deploy no Heroku
+deploy:
+  provider: heroku
+  api_key: $HEROKU_API_KEY
+  edge: true
+  app: devopslab-pmenezes
+  on:
+    branch: main
